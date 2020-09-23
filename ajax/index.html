@@ -1,0 +1,154 @@
+<!--
+name:Byron Doyal
+pawprint:bdwt5	
+date:04/17/2020
+challenge:AJAXSpring2020
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="ajcss.css">
+<title>AJAX</title>
+<script>
+		function getContent() {
+           
+            
+            
+            
+            
+
+            var xmlHttp = new XMLHttpRequest();
+            
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    
+					var response = xmlHttp.responseText;
+					
+					var contentBox = document.getElementById("CType");
+					
+					contentBox.innerHTML = response;
+                
+                }
+		else{
+       			 document.getElementById("CType").innerHTML='<div class="loader"></div>'
+
+
+       			 }
+
+            };
+            
+			
+
+            xmlHttp.open("GET", "https://www.mizzouit.com/2830/challenge9/classInfo.php?content=classType", true);
+            
+            xmlHttp.send();  
+}
+
+
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    myFunc(this);
+    }
+    else{
+        document.getElementById("assign").innerHTML='<div class="loader"></div>'
+
+
+        }
+
+  };
+
+
+  xhttp.open("GET", "https://www.mizzouit.com/2830/challenge9/classInfo.php?content=currentAssignment&format=xml", true);
+  xhttp.send();
+}
+function myFunc(xml){
+var i;
+var xmlDoc = xml.responseXML;
+var name;
+var time;
+var x= xmlDoc.getElementsByTagName("currentAssignment");
+	for (i=0; i<x.length;i++){
+	name="<p>"+ x[i].getElementsByTagName("assignmentName")[0].childNodes[0].nodeValue +"is due on:</p>";
+	time=x[i].getElementsByTagName("dueDateTimestamp")[0].childNodes[0].nodeValue;
+		};
+	document.getElementById("assign").innerHTML = name;
+	var d= new Date(time*1000);
+	 var months_arr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+	var year=d.getFullYear();
+	var month=months_arr[d.getMonth()];
+	var day = d.getDate();
+	var hours= d.getHours();
+	var minutes="0"+d.getMinutes();
+	var seconds= "0"+d.getSeconds();
+	var convdataTime= day+' '+month+' '+year+' '+hours+':'+minutes.substr(-2)+':'+seconds.substr(-2);
+	document.getElementById("DueDate").innerHTML=convdataTime;
+}
+
+function OfficeHours(val) {
+  var xhttp = new XMLHttpRequest();
+  var myObj;
+  var x=" ";
+  var url = "https://www.mizzouit.com/2830/challenge9/classInfo.php?content=officeHours&format=json&day="+val;
+  
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    myObj =JSON.parse(this.responseText);
+    newObj=JSON.stringify(myObj);
+    myObj.officeHours.forEach(function (people){
+		x+=`<p> ${people.person} has office hours at ${people.time} ${people.location}</p>`;
+	});	
+    document.getElementById("OH").innerHTML=x;
+
+    }
+   else{
+	document.getElementById("OH").innerHTML='<div class="loader"></div>'
+
+
+	}
+  };
+
+  xhttp.open("GET",url, true);
+  xhttp.send();
+}
+
+
+
+
+
+
+		
+</script>
+</head>
+<body>
+<a href="../bdwt5ProjectsS20.html">Back to projects</a>
+<div class="header">
+<h1>CS/IT 2830 Dashboard</h1>
+</div>
+<div class="container">
+<div class="item">
+<h3>Current Assignment</h3>
+<p id="assign"></p>
+<p id="DueDate"></p>
+<button type="button" onclick="loadDoc()">Load Content</button>
+</div>
+<div class="item">
+<h3>Class Type</h3>
+<p id="CType"></p>
+<button type="button" onclick="getContent()">Load Content</button>
+</div>
+<div class="item">
+<h3>Office Hour info:</h3>
+<input type="button" value="monday" class="NewB" onclick="OfficeHours(this.value)">
+<input type="button" value="tuesday" class="NewB" onclick="OfficeHours(this.value)">
+<input type="button" value="wednesday" class="NewB" onclick="OfficeHours(this.value)">
+<input type="button" value="thursday" class="NewB" onclick="OfficeHours(this.value)">
+<input type="button" value="friday" class="NewB" onclick="OfficeHours(this.value)">
+<div id="OH">
+</div>
+</div>
+</div>
+</body>
+</html>
