@@ -1,0 +1,158 @@
+<!--
+	Name: Byron Doyal	
+	Pawprint: bdwt5
+	Date: 02/28/2020
+	Challenge: To-Do List S20
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>To Do list</title>
+<link href="jcss.css" rel="stylesheet">
+</head>
+<body>
+<button id="theme" type="button" onclick="toggle();Btxt()" value="Light">Dark</button>
+<div id="header">
+<h1 onclick="changeTitle(this)">To-Do List</h1>
+</div>
+<div id="container">
+
+	<div id="titles">
+		<ul id="title1">
+			<li class="columnHead">Title</li>
+		</ul>
+	</div>
+	<div id="types">
+		<ul id="type1">
+			<li class="columnHead">Type</li>
+			
+		</ul>
+	</div>
+	<div id="dates">
+		<ul id="date1">
+			<li class="columnHead">Date</li>
+		</ul>
+	</div>
+	<div id="actions">
+		<ul id="action1">
+			<li class="columnHead">Action</li>
+		</ul>
+	</div>
+
+
+</div>
+<div id="forms">
+	<form id="myForm">
+		<label for="title">Title:</label>
+		<input type="text" name="title" id="title" placeholder="Do Homework...etc">
+		<label for="type">Type:</label>
+		<select id="type" name="type">
+			<option value="disabled">---</option>
+			<option value="school">School</option>
+			<option value="work">Work</option>
+			<option value="home">Home</option>
+		</select>
+		<label for="date">Date:</label>
+		<input type="text" id="date" name="date" placeholder="MM/DD/YYYY">
+		
+		<br>
+		<br>
+	
+		<input type="reset" value="clear">
+		<button type="reset" onclick="titleCheck(); addType(); addDate()">Add</button>
+	</form>
+</div>
+<a class="name" href="bdwt5ProjectsS20.html">Return to Projects</a>
+<script>
+
+function addButton(){
+	var node= document.createElement("li");
+	var ul=document.getElementById("action1");
+	var button = document.createElement("button");
+	button.innerHTML="Finish";
+	node.appendChild(button);
+	ul.appendChild(node);
+
+
+
+}
+function changeTitle(element){
+ var title =prompt("Change title");
+ element.innerText=title;
+ }
+
+function toggle(){
+	var element=document.body;
+	element.classList.toggle("dark-mode");
+}
+function Btxt(){
+ var change= document.getElementById("theme");
+	if (change.innerHTML=="Dark"){
+		change.innerHTML="Light";
+	}
+	else{
+		change.innerHTML="Dark";
+	}
+
+}
+function titleCheck(){
+	if (!document.getElementById("title").value)
+{
+    // Invalid... Box is empty
+	alert("Add a title");
+	return;
+}
+	addTitle();
+}
+function addTitle(){
+
+	var node= document.createElement("li");
+	var title=document.getElementById("title").value;
+	var textnode= document.createTextNode(title);
+	node.appendChild(textnode);
+	document.getElementById("title1").appendChild(node);
+
+	
+
+}
+function addType(){
+var type2=document.getElementById("type");
+var selectedValue = type2.options[type2.selectedIndex].value
+	if (selectedValue == "disabled")
+{
+    // Invalid... Box is empty
+	alert("Select a Type");
+	return;
+}
+var node1= document.createElement("li");
+	var type=document.getElementById("type").value;
+	var textnode1= document.createTextNode(type);
+	node1.appendChild(textnode1);
+	document.getElementById("type1").appendChild(node1);
+
+	
+
+}
+function addDate(){
+	if (!document.getElementById("date").value)
+{
+    // Invalid... Box is empty
+	alert("Add a Date");
+	return;
+}
+	
+	var node2= document.createElement("li");
+	var date=document.getElementById("date").value;
+	var textnode2= document.createTextNode(date);
+	node2.appendChild(textnode2);
+	document.getElementById("date1").appendChild(node2);
+	
+	addButton();
+}
+function clear(){
+document.getElementById("myForm").reset();
+}
+</script>
+</body>
+</html>

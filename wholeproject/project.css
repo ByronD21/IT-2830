@@ -1,0 +1,134 @@
+body {
+	background-color: #DEB887;
+}
+#navbar {
+  overflow: hidden;
+  dsiplay: flex;
+  background-color: maroon;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  box-shadow: 0 0 25px 0 black;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+.name {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #E0E0E0;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 220%;
+  
+}
+.name2 {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #151B54;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 220%;
+  
+}
+.rectangle {
+  height: 40px;
+  width: 20px;
+  background-color: #E0E0E0;
+  display: inline-block;
+  margin-top: 15px;
+}
+a:link {
+	text-decoration: none;
+}
+a:hover {
+  color: blue;
+}
+.container {
+	flex-wrap: wrap-reverse;
+	width: 90%;
+	position:relative;
+	margin-top: 70px;
+	margin-left:auto;
+	margin-right:auto;
+	display: flex;
+}
+.card {
+	border-width: 4px;
+	border-style: inline;
+	border-color:maroon;
+	border-radius: 15px 50px 30px 5px;
+	width:400px;
+	height: 250px;
+	background-color:white;
+	position: relative;
+	margin-top: 5%;
+	margin-bottom:5%;
+	margin-left:auto;
+	margin-right:auto;
+	overflow:auto;
+	box-shadow:5px 5px;
+	display:flex;
+}
+#image {
+	width: 40%;
+	height: 100%;
+
+	border-right-width:10px;
+	border-right-color: black;
+	border-right-style:double;
+	object-fit:contain;
+	align-self:flex-start;
+	
+}
+#image2 {
+	width: 40%;
+	height: 100%;
+
+	border-right-width:10px;
+	border-right-color: black;
+	border-right-style:double;
+	object-fit:contain;
+	align-self:flex-start;
+	
+}#image3 {
+	width: 40%;
+	height: 100%;
+
+	border-right-width:10px;
+	border-right-color: black;
+	border-right-style:double;
+	object-fit:contain;
+	align-self:flex-start;
+	
+}
+.info{
+	width:60%;
+	flex: 1 1 auto;
+}
+.title {
+	font-weight:bold;
+	display:block;
+	font-size:20px;
+	text-align:center;
+	margin-top:10px;
+	margin-bottom:10px;
+	font-family: 'Oswald', ;
+}
+.description {
+
+	margin-top:13%;
+	font-family: 'Oswald', ;
+	text-align:center;
+	
+	
+}
+.link {
+	display: block;
+	font-weight:bold;
+	text-align:center;
+	font-size:30px;
+	font:blue;
+}

@@ -1,0 +1,136 @@
+body {
+	background-color: #DEB887;
+}
+
+#navbar {
+  overflow: hidden;
+  dsiplay: flex;
+  background-color: maroon;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  box-shadow: 0 0 25px 0 black;
+  color:#E0E0E0;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+.name {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #E0E0E0;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 220%;
+}
+.name2 {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #151B54;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 220%;
+  
+}
+h2 {
+	text-align: center;
+}
+ul {
+	list-style-type: circle;
+}
+.rectangle {
+  height: 40px;
+  width: 20px;
+  background-color: #E0E0E0;
+  display: inline-block;
+  margin-top: 15px;
+}
+a:link {
+	text-decoration: none;
+}
+a:hover {
+  color: blue;
+}
+#main {
+	overflow: hidden;
+	animation-name: water;
+	animation-duration: 3s;
+	margin-top: 120px;
+	color: #E0E0E0;
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 85%;	
+	width: 1101px;
+	border-style: inset;
+	border-width: thin,thick;
+	border-color: maroon;
+	border-width: 6px;
+	border-padding: 8px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #E2CFB6;
+	clear: left;
+	
+}
+#left {
+	margin: 20px;
+	padding: 20px;
+	float: left;
+	width: 241px;
+	height: 390px;
+	background-color: maroon;
+	border-style: inset;
+	border-color: #E2CFB6;
+	border-width: 8px;
+	border-radius: 15px 50px 30px 5px;
+}
+#right {
+	margin: 20px;
+	padding: 20px;
+	width: 200px;
+	float: left;
+	height: 390px;
+	background-color: maroon;
+	border-style: inset;
+	border-color: #E2CFB6;
+	border-width: 8px;
+	border-radius: 30px 5px 15px 50px;
+}
+#middle {
+	
+	padding: 20px;
+	float: left;
+	width: 428px;
+	heigtht: 500px;
+	
+	
+}
+#top {
+		width: 372px;	
+		height: 190px;
+		padding: 20px;
+		border-spacing:20px;
+		margin: 20px;
+		background-color:#F08080;
+		border-radius: 15px;
+		border-style: inset;
+		border-color: white;
+		border-width: 8px;
+}
+#bottom {	
+	
+		width: 372px;
+		height: 120px;
+		padding:20px;
+		background-color:#F08080;
+		margin: 20px;
+		border-spacing:20px;
+		border-radius: 15px;
+		border-style: inset;
+		border-color: white;
+		border-width: 8px;
+}
+.hold {
+	color: maroon;
+}

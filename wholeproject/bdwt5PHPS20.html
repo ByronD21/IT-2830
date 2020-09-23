@@ -1,0 +1,56 @@
+<!--
+	Name: Byron Doyal	
+	Pawprint: bdwt5
+	Date: 04/5/2020
+	Challenge: PHP 2020
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PHP</title>
+</head>
+<body>
+<label for="function">Choose a function:</label>
+
+<select id="functions">
+	<option value="none">---</option>
+	<option value="greet">Greeting</option>
+	<option value="fact">Factorial</option>
+	<option value="rev">Reverse String</option>
+	<option value="sum">Sum of squares</option>
+</select>
+<div id="greeting">
+<form action="hello.php" method="GET">
+	<label for="fname">First name:</label>
+	<input type="text" id="fname" name="fname"><br><br>
+	<label for="lname">Last name:</label>
+	<input type="text" id="lname" name="lname"><br><br>
+	<input type="submit" value="Submit">
+</form>
+<div id="factorial">
+<form action="/action_page.php" method="get">
+	<label for="number">Number:</label>
+	<input type="text" id="number" name="number"><br><br>
+	<input type="submit" value="Submit">
+</form>
+</div>
+<div id="revString">
+<form action="/action_page.php" method="get">
+	<label for="strings">String:</label>
+	<input type="text" id="strings" name="strings"><br><br>
+	<input type="submit" value="Submit">
+</form>
+</div>
+<div id="sums">
+<form action="/action_page.php" method="get">
+	<label for="n1">Number 1:</label>
+	<input type="text" id="n1" name="n1"><br><br>
+	<label for="n2">Number 2:</label>
+	<input type="text" id="n2" name="n2"><br><br>
+	<input type="submit" value="Submit">
+
+</form>
+</div>
+</body>
+</html>
